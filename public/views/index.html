@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="timber" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Timber</title>
+</head>
+<body ng-controller="mainCtrl">
+
+<form ng-submit="addNewProvider(newProvider)">
+	<input ng-model="newProvider.name" type="text" placeholder="Add a new Provider!">
+	<button ng-click="addNewProvider(provider._id)">Add this Provider</button>
+</form>
+
+<ul>
+	<li ng-repeat="provider in providers">{{ provider.name }} <button ng-click="deleteProvider(provder._id)">Delete</button></li>
+</ul>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.min.js"></script>
+<script src="./app.js"></script>
+<script src="mainCtrl.js"></script>
+</body>
+</html>

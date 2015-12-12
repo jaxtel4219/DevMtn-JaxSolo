@@ -3,15 +3,17 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var mongoose = require('mongoose');
+var userCtrl = require('./server/controllers/userCtrl');
+var eventCtrl = require('./server/controllers/eventCtrl');
+var organizerCtrl = require('./server/controllers/organizerCtrl');
 
 // Connetions //
 var port = 10000;
-var mongoUri = 'mongodb://localhost:27017/timber';
+var mongoUri = 'mongodb://localhost:27017/volunteer';
 
 
 // Controllers //
-var userCtrl = require('./back_end_server/controllers/userCtrl');
-var providerCtrl = require('./back_end_server/controllers/providerCtrl');
+// var mainCtrl = require('./public/mainCtrl');
 
 
 // Express //
@@ -27,17 +29,30 @@ console.log(__dirname);
 
 // Endpoints //
 
-// provider
-app.post('api/provider', providerCtrl.addProvider);
-app.get('/api/provider', providerCtrl.getProvider);
-app.put('/api/provider/:id', providerCtrl.updateProvider);
-app.delete('/api/provider/:id', providerCtrl.deleteProvider);
-
-//user
-app.post('/api/user', userCtrl.addUser);
+// User
+app.post('/api/user', userCtrl.addNewUser);
 app.get('/api/user', userCtrl.getUser);
-app.put('/api/user/:id', userCtrl.updateUser);
+app.get('/api/user/:id', userCtrl.getUserById);
 app.delete('/api/user/:id', userCtrl.deleteUser);
+
+app.put('/api/user/:id', userCtrl.updateUser);
+app.put('/api/user/event/:id', userCtrl.updateUserEvents);
+
+
+// Event
+app.post('/api/event', eventCtrl.addNewEvent);
+app.get('/api/event', eventCtrl.getEvent);
+app.get('/api/event/:id', eventCtrl.getEventById);
+app.delete('/api/event/:id', eventCtrl.deleteEvent);
+app.put('/api/event/:id', eventCtrl.updateEvent);
+app.put('/api/event/volunteers/:id', eventCtrl.updateEventVolunteers);
+
+// // Organizer
+// app.post('/api/organizer', organizerCtrl.addNewOrganizer);
+// app.get('/api/organizer', organizerCtrl.getOrganizer);
+// app.delete('/api/organizer/:id', organizerCtrl.deleteOrganizer);
+// app.put('/api/organizer/:id', organizerCtrl.updateOrganizer);
+
 
 app.listen(port, function() {
   console.log('listening on port: ' + port);

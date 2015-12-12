@@ -1,0 +1,56 @@
+<h1>
+	TestPage
+</h1>
+
+<div>
+	A place where people intersted in volunteering can help locals in need.
+	
+</div>
+<br>
+	
+<div>
+	
+	<!--this works (not tested reviewer)-->
+	<!--<input type="text" ng-model="user.name" placeholder = "Name of User">
+	<br>
+	<input type="text" ng-model="user.role" placeholder = "role of User :) ">
+	<br>
+	<button ng-click="addNewUser(user)">Add a nasty User</button>
+	-->
+	
+	<!--<input type="text" ng-model="user.reviews.reviewer" placeholder = "reviewer">	
+	<br>
+	<input type="number" ng-model="user.reviews.rating" placeholder = "rating">-->
+	
+</div>
+<br>
+<br>	
+
+<form ng-submit>
+<!--<form ng-submit="addNewUser(user)">-->
+	
+	<input ng-model="user.name" type="text" placeholder="User Name">
+	<input ng-model="user.role" type="text" placeholder="Role">
+	<input ng-model="user.email" type="text" placeholder="Email">
+	<input ng-model="user.number" type="text" placeholder="Phone Number">
+	<button ng-click="addNewUser(user)">Add this User</button>
+</form>
+<br>
+
+
+<!--<ul>
+	<li ng-repeat="User in Users">{{ User.name }} <button ng-click="deleteUser(user._id)">Delete</button></li>
+</ul>-->
+
+<div ng-repeat="user in users">
+	Name: {{ user.name }} - Role: {{ user.role }}
+	<!--<button ng-click="updateUser(user._id)">Edit</button>-->
+	
+	<button ng-click="deleteUser(user._id)">Delete</button>
+	<!--<ul>
+		<li ng-repeat="review in user.reviews">{{ review.reviewer }}
+			<button ng-click="getReview(user._id, review._id)">Find review!</button>
+		</li>
+	</ul>-->
+</div>
+<br>

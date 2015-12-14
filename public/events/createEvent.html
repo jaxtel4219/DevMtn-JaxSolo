@@ -1,1 +1,43 @@
+Create Event
+<br>
+
 {{test}}
+<br>
+<input type="text" ng-model="event.name" placeholder="Enter name">
+<br>
+<input type="text" ng-model="event.description" min-length="2" max-length="10" placeholder="Enter phone number">
+<br>
+<input type="password" ng-model="event.password" placeholder="Enter password">
+<br>
+<input type="text" ng-model="event.phone" min-length="7" max-length="10" placeholder="Enter phone number">
+<br>
+<textarea ng-model="event.bio" placeholder="Enter a little a about yourself/skills"></textarea>
+<br>
+<a ng-click="register()">Register</a>
+
+
+var Event = Schema({
+	Name: { type: String, required: true },
+	Description: { type: String },
+	Category: { type: String, required: true },
+	SpecialReqs: {type: String },
+	LocationDescription: { type: String },
+	Address1: { type: String },
+	Address2: { type: String },
+	City: { type: String },
+	State: { type: String },
+	Zip: { type: String },
+	createdBy: {type: Schema.Types.ObjectId, ref: 'event' },
+	// StartDate: { type: Date, required: true },
+	// StartTime: { type: Date, required: true },
+	// EndDate: { type: Date, required: true },
+	// EndTime: { type: Date, required: true },
+	VolunteersNeeded: { type: Number },
+	// Volunteers: [{ type: Schema.Types.ObjectId, ref: 'event' }],
+
+	Volunteers: [
+							{ eventId: {type: Schema.Types.ObjectId, ref: 'event' }, 
+							  Status: {type: String, enum: ["New", "Confirmed", "Contacted", "Rejected" ] }
+							}
+						  ]
+	

@@ -1,37 +1,19 @@
-<h1>
-	TestPage
-</h1>
-
-<h6>
-	TestPage
-</h6>
-
-<div>
-	A place where people intersted in volunteering can help locals in need.
-	
-</div>
-<br>
-	
 <div>
 	
-	<!--this works (not tested reviewer)-->
-	<!--<input type="text" ng-model="user.name" placeholder = "Name of User">
+	<input type="text" ng-model="user.name" placeholder = "Name of User">
 	<br>
 	<input type="text" ng-model="user.role" placeholder = "role of User :) ">
 	<br>
 	<button ng-click="addNewUser(user)">Add a nasty User</button>
-	-->
 	
 	<!--<input type="text" ng-model="user.reviews.reviewer" placeholder = "reviewer">	
 	<br>
 	<input type="number" ng-model="user.reviews.rating" placeholder = "rating">-->
 	
 </div>
-<br>
 <br>	
 
 <form ng-submit>
-<!--<form ng-submit="addNewUser(user)">-->
 	
 	<input ng-model="user.name" type="text" placeholder="User Name">
 	<input ng-model="user.role" type="text" placeholder="Role">
@@ -41,10 +23,6 @@
 </form>
 <br>
 
-
-<!--<ul>
-	<li ng-repeat="User in Users">{{ User.name }} <button ng-click="deleteUser(user._id)">Delete</button></li>
-</ul>-->
 
 <div ng-repeat="user in users">
 	Name: {{ user.name }} - Role: {{ user.role }}

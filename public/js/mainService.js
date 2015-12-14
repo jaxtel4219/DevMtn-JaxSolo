@@ -3,9 +3,10 @@ angular.module('volunteer')
 
 
 ////User
-	this.getUser = function() {
-		return $http.get('/api/user').then(function( response ) {
-			return response.data;
+	this.getUser = function(user) {
+		//using post here as a "get""
+		return $http.post('/api/getUser', user).then(function( response ) {
+			return response.data[0];
 		});		
 	}
 
@@ -75,46 +76,6 @@ angular.module('volunteer')
 	this.deleteEvent = function( id ) { //changed eventId to id here and on line of $http.delete request
 		// console.log("mainService eventId: ", id);
 		return $http.delete('/api/event/' + id).then(function( response ) {
-			console.log(response);
-			return response.data;
-		});
-	}
-
-
-
-////Organizer
-	this.getOrganizer = function() {
-		return $http.get('/api/organizer').then(function( response ) {
-			return response.data;
-		});		
-	}
-
-	this.addNewOrganizer = function(organizer) {
-		// console.log("servcie", organizer);
-		return $http.post('/api/organizer', organizer).then(function( response ) {
-			return response.data;
-		});		
-	}
-
-	// this.getReview = function( organizerId, reviewId ) {
-	// 	$http.get('/api/organizer/review?organizerId=' + organizerId + '&reviewId=' + reviewId)
-	// 		.then(function( response ) {
-	// 			return response.data;
-	// 	});
-	// } 
-
-	this.udpateOrganizer = function( id ) { 
-		// console.log("mainService organizerId: ", id);
-		return $http.put('/api/organizer/' + id).then(function( response ) {
-			console.log(response);
-			return response.data;
-		});
-	}
-
-
-	this.deleteOrganizer = function( id ) { //changed organizerId to id here and on line of $http.delete request
-		// console.log("mainService organizerId: ", id);
-		return $http.delete('/api/organizer/' + id).then(function( response ) {
 			console.log(response);
 			return response.data;
 		});

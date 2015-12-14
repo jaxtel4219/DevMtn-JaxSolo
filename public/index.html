@@ -4,9 +4,32 @@
 	<meta charset="UTF-8">
 	<title>Volunteer</title>
 	<link rel="stylesheet" href="./css/styles.css">
+
+    <!-- CSS (load bootstrap) -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <style>
+        .navbar { border-radius:0; }
+    </style>
+
 </head>
 	
-<body>
+<body ng-controller="mainCtrl">
+    
+<!-- NAVIGATION -->
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" ui-sref="login">Volunteer Site</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a ui-sref="allEvents">allEvents</a></li>
+		<li><a ui-sref="createEvent">createEvent</a></li>
+		<li><a ui-sref="myEvents">myEvents</a></li>
+		<li><a ui-sref="updateEvent">updateEvent</a></li>
+        <li><a ui-sref="login">login</a></li>
+		<li><a ui-sref="register">register</a></li>
+    </ul>
+</nav>
+
 
 <ui-view>
 </ui-view>

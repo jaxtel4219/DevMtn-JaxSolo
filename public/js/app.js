@@ -52,9 +52,5 @@ angular.module('volunteer', ['ui.router'])
 
 
 
-
-
-
-
 //end
 });

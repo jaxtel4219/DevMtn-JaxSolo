@@ -1,5 +1,16 @@
+Login
+<br>
 {{test}}
 
-    <a ui-sref="myEvents({id:'56675839e07ecbf71f0f1e4c'})">
-		login</a>
+
+<br>
+<input type="email" ng-model="user.email" placeholder="Enter email">
+<br>
+<input type="password" ng-model="user.password" placeholder="Enter password">
+<br>
+<a ng-click="login()">Login</a>
+
+<!--<a ui-sref="myEvents({id:'56675839e07ecbf71f0f1e4c'})">login</a>-->
 		
+<a ui-sref="register">register</a>
+

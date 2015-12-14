@@ -5,7 +5,6 @@ var cors = require('cors');
 var mongoose = require('mongoose');
 var userCtrl = require('./server/controllers/userCtrl');
 var eventCtrl = require('./server/controllers/eventCtrl');
-var organizerCtrl = require('./server/controllers/organizerCtrl');
 
 // Connetions //
 var port = 10000;
@@ -31,7 +30,7 @@ console.log(__dirname);
 
 // User
 app.post('/api/user', userCtrl.addNewUser);
-app.get('/api/user', userCtrl.getUser);
+app.post('/api/getUser', userCtrl.getUser);
 app.get('/api/user/:id', userCtrl.getUserById);
 app.delete('/api/user/:id', userCtrl.deleteUser);
 
@@ -46,13 +45,6 @@ app.get('/api/event/:id', eventCtrl.getEventById);
 app.delete('/api/event/:id', eventCtrl.deleteEvent);
 app.put('/api/event/:id', eventCtrl.updateEvent);
 app.put('/api/event/volunteers/:id', eventCtrl.updateEventVolunteers);
-
-// // Organizer
-// app.post('/api/organizer', organizerCtrl.addNewOrganizer);
-// app.get('/api/organizer', organizerCtrl.getOrganizer);
-// app.delete('/api/organizer/:id', organizerCtrl.deleteOrganizer);
-// app.put('/api/organizer/:id', organizerCtrl.updateOrganizer);
-
 
 app.listen(port, function() {
   console.log('listening on port: ' + port);

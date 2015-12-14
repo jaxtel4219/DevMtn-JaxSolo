@@ -1,1 +1,24 @@
+All Events
+<br>
 {{test}}
+
+
+<h5>
+<div ng-repeat="event in events">
+	{{ event.eventName }},
+	{{ event.eventDescription }}
+	<!--{{ event.category }}
+	{{ event.specialReqs }}
+	{{ event.locationDescription }}
+	{{ event.address1 }}
+	{{ event.address2 }}
+	{{ event.city }}
+	{{ event.state }}
+	{{ event.zip }}
+	{{ event.createdBy }}
+	{{ event.volunteersNeeded }}
+	{{ event.volunteers }}-->
+	<button ng-click="updateEvent(event._id)">Edit this event</button>
+	<button ng-click="deleteEvent(event._id)">Delete this event</button>
+</div>
+</h5>

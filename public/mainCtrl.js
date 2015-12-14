@@ -9,7 +9,6 @@ angular.module('volunteer')
 			$scope.users = response;	
 		})
 	}
-	$scope.getUser();
 
 	$scope.addNewUser = function (user) {
 		console.log("controller", user);
@@ -42,7 +41,7 @@ angular.module('volunteer')
 		})
 		
 	}
-	
+	// $scope.getUser();	
 	
 ////Event
 	$scope.getEvent = function() {
@@ -58,14 +57,6 @@ angular.module('volunteer')
 			$scope.getEvent();
 		})
 	}
-
-	// $scope.getReview = function( EventId, reviewId ) {
-		
-	// 	mainService.getReview(EventId, reviewId ).then(function (response) {
-	// 		console.log (response);
-	// 		$scope.selectedReview = response.data;
-	// 	})
-	// }
 	
 	$scope.updateEvent = function( id ) {
 		console.log("mainCtrl eventId: ", id);
@@ -74,7 +65,6 @@ angular.module('volunteer')
 		})
 
 	}
-	$scope.getEvent();
 	
 	$scope.deleteEvent = function( id ) {
 		console.log("mainCtrl eventId: ", id);
@@ -84,55 +74,6 @@ angular.module('volunteer')
 		
 	}
 	$scope.getEvent();
-	
-	
-	
-////Organizer
-	$scope.getOrganizer = function() {
-		mainService.getOrganizer().then( function (response) {
-			$scope.organizers = response;	
-		})
-	}
-
-	$scope.addNewOrganizer = function (organizer) {
-		console.log("controller", organizer);
-		mainService.addNewOrganizer(organizer).then(function (response) {
-			console.log (response);
-			$scope.getOrganizer();
-		})
-	}
-
-	// $scope.getReview = function( OrganizerId, reviewId ) {
-		
-	// 	mainService.getReview(OrganizerId, reviewId ).then(function (response) {
-	// 		console.log (response);
-	// 		$scope.selectedReview = response.data;
-	// 	})
-	// }
-	
-	$scope.updateOrganizer = function( id ) {
-		console.log("mainCtrl organizerId: ", id);
-		mainService.updateOrganizer(id).then(function (response) {
-			$scope.getOrganizer();
-		})
-
-	}
-	$scope.getOrganizer();
-	
-	$scope.deleteOrganizer = function( id ) {
-		console.log("mainCtrl organizerId: ", id);
-		mainService.deleteOrganizer(id).then(function (response) {
-			$scope.getOrganizer();
-		})
-		
-	}
-	$scope.getOrganizer();
-	
-	
-	
-	
-	
-	
 	
 })
 

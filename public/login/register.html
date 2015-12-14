@@ -1,1 +1,16 @@
+Register
+<br>
 {{test}}
+
+<br>
+<input type="text" ng-model="user.name" placeholder="Enter name">
+<br>
+<input type="email" ng-model="user.email" placeholder="Enter email">
+<br>
+<input type="password" ng-model="user.password" placeholder="Enter password">
+<br>
+<input type="text" ng-model="user.phone" min-length="7" max-length="10" placeholder="Enter phone number">
+<br>
+<textarea ng-model="user.bio" placeholder="Enter a little a about yourself/skills"></textarea>
+<br>
+<a ng-click="register()">Register</a>

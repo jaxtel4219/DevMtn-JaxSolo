@@ -4,8 +4,12 @@ module.exports = {
 
 
 	getUser: function( req, res ) {
-		User.find().then(function( response ) {
-			res.send(response);
+		User.find({'email' : req.body.email}).where('password').equals(req.body.password).exec(function( err, data ) {
+			if (err) {
+				res.status(500).send(err);
+			} else {
+				res.send(data);
+			}
 		});
 	},
 

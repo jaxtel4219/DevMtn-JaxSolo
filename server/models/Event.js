@@ -2,26 +2,27 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var Event = Schema({
-	eventName: { type: String, required: true },
-	eventDescription: { type: String },
-	eventCategory: { type: String, required: true },
-	eventSpecialReqs: {type: String },
-	eventLocationDescription: { type: String },
-	eventAddress1: { type: String },
-	eventAddress2: { type: String },
-	eventCity: { type: String },
-	eventState: { type: String },
-	eventZip: { type: String },
-	// eventStartDate: { type: Date, required: true },
-	// eventStartTime: { type: Date, required: true },
-	// eventEndDate: { type: Date, required: true },
-	// eventEndTime: { type: Date, required: true },
-	eventVolunteersNeeded: { type: Number },
-	// eventVolunteers: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+	Name: { type: String, required: true },
+	Description: { type: String },
+	Category: { type: String, required: true },
+	SpecialReqs: {type: String },
+	LocationDescription: { type: String },
+	Address1: { type: String },
+	Address2: { type: String },
+	City: { type: String },
+	State: { type: String },
+	Zip: { type: String },
+	createdBy: {type: Schema.Types.ObjectId, ref: 'User' },
+	// StartDate: { type: Date, required: true },
+	// StartTime: { type: Date, required: true },
+	// EndDate: { type: Date, required: true },
+	// EndTime: { type: Date, required: true },
+	VolunteersNeeded: { type: Number },
+	// Volunteers: [{ type: Schema.Types.ObjectId, ref: 'User' }],
 
-	eventVolunteered: [
+	Volunteers: [
 							{ userId: {type: Schema.Types.ObjectId, ref: 'User' }, 
-							  eventStatus: {type: String, enum: ["New", "Confirmed", "Contacted", "Rejected" ] }
+							  Status: {type: String, enum: ["New", "Confirmed", "Contacted", "Rejected" ] }
 							}
 						  ]
 	

@@ -6,12 +6,13 @@ var User = Schema({
 	email: { type: String, required: true },	
 	phone: { type: String },
 	bio: { type: String },
-	myCreatedEvents: [{ type: Schema.Types.ObjectId, ref: 'Event' }],
-	myVolunteeredEvents: [
-							{ eventId: {type: Schema.Types.ObjectId, ref: 'Event' }, 
-							  eventStatus: {type: String}
-							}
-						  ]
+	password: { type: String, required: true }
+	// myCreatedEvents: [{ type: Schema.Types.ObjectId, ref: 'Event' }],
+	// myVolunteeredEvents: [
+	// 						{ eventId: {type: Schema.Types.ObjectId, ref: 'Event' }, 
+	// 						  eventStatus: {type: String}
+	// 						}
+	// 					  ]
 	
 });
 

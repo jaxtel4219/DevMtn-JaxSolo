@@ -30,6 +30,12 @@ angular.module('volunteer', ['ui.router'])
             templateUrl: './events/allEvents.html',
 			controller: 'allEventsCtrl'
         })
+
+		.state('member.thisEvent', {
+            url: '/thisEvent/:eventId',
+            templateUrl: './events/thisEvent.html',
+			controller: 'thisEventCtrl'
+        })
 		
 		.state('member.myEvents', {
             url: '/myEvents',
@@ -39,7 +45,7 @@ angular.module('volunteer', ['ui.router'])
 		
 		.state('member.createEvent', {
             url: '/createEvent',
-            templateUrl: '/events/createEvent.html',
+            templateUrl: './events/createEvent.html',
 			controller: 'createEventCtrl'
         })
 		

@@ -4,7 +4,7 @@ angular.module('volunteer')
 	
 $scope.login= function(){
 	mainService.getUser($scope.user).then(function(response){
-		$state.go('myEvents', {id: response._id})
+		$state.go('member.myEvents', {id: response._id})
 	}
 	)
 };	

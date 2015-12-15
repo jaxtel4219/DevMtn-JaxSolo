@@ -19,26 +19,32 @@ angular.module('volunteer', ['ui.router'])
 			controller: 'registerCtrl'
         })	
 
-        .state('allEvents', {
+		.state('member', {
+            url: '/member/:id',
+            templateUrl: './events/member.html',
+			controller: 'memberCtrl'
+        })        
+
+        .state('member.allEvents', {
             url: '/allEvents',
             templateUrl: './events/allEvents.html',
 			controller: 'allEventsCtrl'
         })
 		
-		.state('myEvents', {
-            url: '/myEvents/:id',
+		.state('member.myEvents', {
+            url: '/myEvents',
             templateUrl: './events/myEvents.html',
 			controller: 'myEventsCtrl'
         })
 		
-		.state('createEvent', {
+		.state('member.createEvent', {
             url: '/createEvent',
             templateUrl: '/events/createEvent.html',
 			controller: 'createEventCtrl'
         })
 		
-		.state('updateEvent', {
-            url: '/updateEvent',
+		.state('member.updateEvent', {
+            url: '/updateEvent/:eventId',
             templateUrl: './events/updateEvent.html',
 			controller: 'updateEventCtrl'
         })

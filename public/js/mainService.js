@@ -50,7 +50,13 @@ angular.module('volunteer')
 		});		
 	}
 
-	this.addNewEvent = function(event) {
+	this.getEventsCreatedById = function(userId) {
+		return $http.get('/api/event/createdBy/'+ userId).then(function( response ) {
+			return response.data;
+		});		
+	}
+
+	this.createEvent = function(event) {
 		// console.log("servcie", event);
 		return $http.post('/api/event', event).then(function( response ) {
 			return response.data;
@@ -64,9 +70,9 @@ angular.module('volunteer')
 	// 	});
 	// } 
 
-	this.udpateEvent = function( id ) { 
+	this.udpateEventVolunteers = function( id, volunteer ) { 
 		// console.log("mainService eventId: ", id);
-		return $http.put('/api/event/' + id).then(function( response ) {
+		return $http.put('/api/event/volunteers' + id, volunteer).then(function( response ) {
 			console.log(response);
 			return response.data;
 		});

@@ -5,7 +5,7 @@ angular.module('volunteer')
 
 $scope.register= function(){
 	mainService.addNewUser($scope.user).then(function(response){
-			$state.go('myEvents', {id: response._id})
+			$state.go('member.myEvents', {id: response._id})
 	}
 	)
 };

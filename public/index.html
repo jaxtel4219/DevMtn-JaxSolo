@@ -13,9 +13,9 @@
 
 </head>
 	
-<body ng-controller="mainCtrl">
+<body >
     
-<!-- NAVIGATION -->
+ <!--NAVIGATION 
 <nav class="navbar navbar-inverse" role="navigation">
     <div class="navbar-header">
         <a class="navbar-brand" ui-sref="login">Volunteer Site</a>
@@ -29,7 +29,7 @@
 		<li><a ui-sref="register">register</a></li>
     </ul>
 </nav>
-
+<a ui-sref="myEvents({id:'56675839e07ecbf71f0f1e4c'})">-->
 
 <ui-view>
 </ui-view>
@@ -40,6 +40,7 @@
 <script src="./mainCtrl.js"></script>
 <script src="./login/loginCtrl.js"></script>
 <script src="./login/registerCtrl.js"></script>
+<script src="./events/memberCtrl.js"></script>
 <script src="./events/allEventsCtrl.js"></script>
 <script src="./events/createEventCtrl.js"></script>
 <script src="./events/updateEventCtrl.js"></script>

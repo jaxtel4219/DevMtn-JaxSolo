@@ -24,8 +24,17 @@ module.exports = {
 		});
 	},
 
+	getEventCreatedById: function( req, res ) {
+		Event.find().where('createdBy').equals(req.params.id).exec(function( err, data ) {
+			if (err) {
+				res.status(500).send(err);
+			} else {
+				res.send(data);
+			}
+		});
+	},
+
 	addNewEvent: function( req, res ) {
-		console.log("event: ", req.body);
 		new Event(req.body).save(function( err, data ) {
 			if (err) {
 				res.status(500).send(err);
@@ -36,7 +45,7 @@ module.exports = {
 	},
 
 	updateEventVolunteers: function( req, res ) {	
-		Event.findByIdAndUpdate(req.params.id, {$push: {"eventVolunteered": req.body}},function( err, response ) {
+		Event.findByIdAndUpdate(req.params.id, {$push: {"volunteers": req.body}},function( err, response ) {
 			if (err) {
 				res.status(500).send(err);
 			} else {

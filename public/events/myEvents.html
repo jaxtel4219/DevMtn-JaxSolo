@@ -1,14 +1,39 @@
-<h2>My Events</h2>
+<h2>My Created Events</h2>
+<br>
 
 <div ng-repeat = "event in events">
 	<!--{{event}}-->
-	<h4>Event Name: {{ event.name }}</h4>
+	<h4><a ui-sref="member.thisEvent({eventId: event._id})">{{ event.name }}</a></h4>
 	Description: {{ event.description }}<br>
 	Category: {{ event.category }}<br>
 	<!--Special Requirements: {{ event.specialReqs }}<br>
 	Location: {{ event.locationDescription }}<br>
 	Address: {{ event.address1 }}<br>
-	Address (cont): {{ event.address2 }}<br>
+	Address: (cont): {{ event.address2 }}<br>
+	City: {{ event.city }}<br>
+	State: {{ event.state }}<br>
+	Zip: {{ event.zip }}<br>
+	{{ event.createdBy }}<br>
+	# of Volunteers Needed: {{ event.volunteersNeeded }}<br>
+	{{ event.volunteers }}<br>-->
+	<!--<a ui-sref=".thisEvent">Event Detail</a>-->
+	<!--<button ng-click="updateEvent(event._id)">Edit this event</button>
+	<button ng-click="deleteEvent(event._id)">Delete this event</button>-->
+	
+</div>
+
+<h2>Events Volunteered For</h2>
+<br>
+
+<div ng-repeat = "event in events">
+	<!--{{event}}-->
+	<h4><a ui-sref="member.thisEvent({eventId: event._id})">{{ event.name }}</a></h4>
+	Description: {{ event.description }}<br>
+	Category: {{ event.category }}<br>
+	<!--Special Requirements: {{ event.specialReqs }}<br>
+	Location: {{ event.locationDescription }}<br>
+	Address: {{ event.address1 }}<br>
+	Address: (cont): {{ event.address2 }}<br>
 	City: {{ event.city }}<br>
 	State: {{ event.state }}<br>
 	Zip: {{ event.zip }}<br>

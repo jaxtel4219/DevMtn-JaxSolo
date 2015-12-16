@@ -56,6 +56,7 @@ angular.module('volunteer')
 		});		
 	}
 
+
 	this.getThisEvent = function(eventId) {
 		console.log(eventId);
 		return $http.get('/api/event/'+ eventId).then(function( response ) {

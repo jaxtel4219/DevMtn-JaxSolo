@@ -43,6 +43,7 @@ app.post('/api/event', eventCtrl.addNewEvent);
 app.get('/api/event', eventCtrl.getEvent);
 app.get('/api/event/:id', eventCtrl.getEventById);
 app.get('/api/event/createdBy/:id', eventCtrl.getEventCreatedById);
+
 app.delete('/api/event/:id', eventCtrl.deleteEvent);
 app.put('/api/event/:id', eventCtrl.updateEvent);
 app.put('/api/event/volunteers/:id', eventCtrl.updateEventVolunteers);

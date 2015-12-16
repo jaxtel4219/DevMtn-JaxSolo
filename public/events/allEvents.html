@@ -1,7 +1,8 @@
-<h2>All Event Listings</h2><br>
+<h2>All Event Listings</h2>
+<br>
 
 <div ng-repeat="event in events">
-	<h4>Event Name: {{ event.name }}</h4>
+	<h4><a ui-sref="member.thisEvent({eventId: event._id})">{{ event.name }}</a></h4>
 	Description: {{ event.description }}<br>
 	Category: {{ event.category }}<br>
 	<!--{{ event.specialReqs }}<br>
@@ -14,7 +15,7 @@
 	{{ event.createdBy }}<br>
 	# of Volunteers Needed: {{ event.volunteersNeeded }}<br>
 	{{ event.volunteers }}<br>-->
-	<a ui-sref="member.thisEvent({eventId: event._id})">Event Detail</a>
+	<!--<a ui-sref="member.thisEvent({eventId: event._id})">Event Detail</a>-->
 	
 	
 	<!--<button ng-click="updateEvent(event._id)">Edit this event</button>

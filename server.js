@@ -40,9 +40,11 @@ app.put('/api/user/event/:id', userCtrl.updateUserEvents);
 
 // Event
 app.post('/api/event', eventCtrl.addNewEvent);
+
 app.get('/api/event', eventCtrl.getEvent);
 app.get('/api/event/:id', eventCtrl.getEventById);
 app.get('/api/event/createdBy/:id', eventCtrl.getEventCreatedById);
+app.get('/api/event/volunteeredFor/:id', eventCtrl.getEventsVolunteeredFor);
 
 app.delete('/api/event/:id', eventCtrl.deleteEvent);
 app.put('/api/event/:id', eventCtrl.updateEvent);

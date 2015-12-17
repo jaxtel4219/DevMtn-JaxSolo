@@ -43,7 +43,7 @@ angular.module('volunteer')
 
 
 
-////Event
+////Events
 	this.getEvent = function() {
 		return $http.get('/api/event').then(function( response ) {
 			return response.data;
@@ -55,6 +55,14 @@ angular.module('volunteer')
 			return response.data;
 		});		
 	}
+	
+	this.getEventsVolunteeredFor = function(userId) {
+		return $http.get('/api/event/volunteeredFor/'+ userId).then(function( response ) {
+			return response.data;
+		});		
+	}
+
+
 
 
 	this.getThisEvent = function(eventId) {
@@ -63,6 +71,7 @@ angular.module('volunteer')
 			return response.data;
 		});		
 	}
+	
 
 	this.createEvent = function(event) {
 		// console.log("servcie", event);

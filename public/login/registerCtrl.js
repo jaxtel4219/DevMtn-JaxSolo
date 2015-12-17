@@ -1,6 +1,6 @@
 angular.module('volunteer')
 .controller('registerCtrl', function( $scope, mainService, $state ) {
-	$scope.test = "Hello"
+	// $scope.test = "Hello"
 
 
 $scope.register= function(){

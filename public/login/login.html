@@ -1,16 +1,40 @@
-Login
-<br>
-{{test}}
+<div class="jumbotron text-center">
+    <h1>Login for Event Volunteering</h1>
+    <p>Login or register to <span class="text-danger">volunter</span> for events or <span class="text-danger">create</span> your own!.</p>
+</div>
 
-
 <br>
+
+<form class="form-horizontal">
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-3">
+      <input type="email" ng-model="user.email" class="form-control" id="inputEmail3" placeholder="Email">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-2">
+      <input type="password" ng-model="user.password" class="form-control" id="inputPassword3" placeholder="Password">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default" ng-click="login()">Sign in</button>
+    </div>
+  </div>
+</form>
+
+<!--
 <input type="email" ng-model="user.email" placeholder="Enter email">
 <br>
 <input type="password" ng-model="user.password" placeholder="Enter password">
 <br>
-<a ng-click="login()">Login</a>
+<a ng-click="login()">Login</a>-->
 
+
+<!--Used this to "fake" the login-->
 <!--<a ui-sref="myEvents({id:'56675839e07ecbf71f0f1e4c'})">login</a>-->
 		
-<a ui-sref="register">register</a>
+
 

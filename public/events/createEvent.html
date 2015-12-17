@@ -1,8 +1,6 @@
 <h2>Create Event</h2>
 <br>
 
-{{test}}
-<br>
 <input type="text" ng-model="event.name" placeholder="Enter event name">
 <br>
 <textarea ng-model="event.description" min-length="1" placeholder="Enter event description"></textarea>
@@ -25,8 +23,10 @@
 <br>
 <input type="number" ng-model="event.volunteersNeeded" placeholder="# of volunteers needed">
 <br>
+<br>
 
-<a ng-click="createEvent()">Create this event</a>
+<button type="button" class="btn btn-primary" ng-click="createEvent()">Create this Event</button>
+<!--<a ng-click="createEvent()">Create this event</a>-->
 
 
 <!--var Event = Schema({

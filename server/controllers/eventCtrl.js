@@ -34,6 +34,16 @@ module.exports = {
 		});
 	},
 
+	getEventsVolunteeredFor: function( req, res ) {
+		Event.find().where('volunteers').equals(req.params.id).exec(function( err, data ) {
+			if (err) {
+				res.status(500).send(err);
+			} else {
+				res.send(data);
+			}
+		});
+	},
+
 	addNewEvent: function( req, res ) {
 		new Event(req.body).save(function( err, data ) {
 			if (err) {

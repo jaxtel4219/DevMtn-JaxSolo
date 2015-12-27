@@ -58,6 +58,7 @@ angular.module('volunteer')
 	
 	this.getEventsVolunteeredFor = function(userId) {
 		return $http.get('/api/event/volunteeredFor/'+ userId).then(function( response ) {
+			console.log("response from server: ", response);
 			return response.data;
 		});		
 	}
@@ -80,6 +81,14 @@ angular.module('volunteer')
 		});		
 	}
 
+	// this.volunteerForEvent = function(event) {
+	// 	// console.log("servcie", event);
+	// 	return $http.post('/api/event', event).then(function( response ) {
+	// 		return response.data;
+	// 	});		
+	// }
+
+
 	// this.getReview = function( eventId, reviewId ) {
 	// 	$http.get('/api/event/review?eventId=' + eventId + '&reviewId=' + reviewId)
 	// 		.then(function( response ) {
@@ -89,7 +98,7 @@ angular.module('volunteer')
 
 	this.udpateEventVolunteers = function( id, volunteer ) { 
 		// console.log("mainService eventId: ", id);
-		return $http.put('/api/event/volunteers' + id, volunteer).then(function( response ) {
+		return $http.put('/api/event/volunteers/' + id, volunteer).then(function( response ) {
 			console.log(response);
 			return response.data;
 		});

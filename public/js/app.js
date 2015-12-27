@@ -37,13 +37,7 @@ angular.module('volunteer', ['ui.router'])
 			controller: 'thisEventCtrl'
         })
 		
-
-//start experimental multi-column / same page /multi-controller
-//so on this endpoint, we want...
-//if the user is a user...
-//show user created events on the left column, user volunteered for events on the right, and all events on the bottom across the whole screen (leave off per Miles...reasoning: MVP, I've got to get moving)
-//also, keep calls to back-end minimal. Retrieving ALL records is a bad idea, and do not filter ont he front side.
-
+        ////Prior to multi column/controller expirement
 		// .state('member.myEvents', {
         //     url: '/myEvents',
         //     templateUrl: './events/myEvents.html',

@@ -3,7 +3,7 @@ angular.module('volunteer')
 	$scope.userId = $stateParams.id;
 	$scope.getEventsCreatedById = function(){
 		mainService.getEventsCreatedById($scope.userId).then(function(response){
-			console.log(response);
+			console.log("Here it is on the controller: ", response);
 			$scope.events=response;
 		})
 	}();

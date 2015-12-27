@@ -35,10 +35,11 @@ module.exports = {
 	},
 
 	getEventsVolunteeredFor: function( req, res ) {
-		Event.find().where('volunteers').equals(req.params.id).exec(function( err, data ) {
+		Event.find().where('volunteers.userId').equals(req.params.id).exec(function( err, data ) {
 			if (err) {
 				res.status(500).send(err);
 			} else {
+				console.log("response: ", data);
 				res.send(data);
 			}
 		});
@@ -55,7 +56,8 @@ module.exports = {
 	},
 
 	updateEventVolunteers: function( req, res ) {	
-		Event.findByIdAndUpdate(req.params.id, {$push: {"volunteers": req.body}},function( err, response ) {
+		Event.findByIdAndUpdate(req.params.id, {$push: {"volunteers": req.body}}, {'new': true}, function( err, response ) {
+			console.log("this is the req: ", req.body)
 			if (err) {
 				res.status(500).send(err);
 			} else {

@@ -1,4 +1,8 @@
-<h2>Create Event</h2>
+<div class="jumbotron text-center">
+    <h1>Create Event Page</h1>
+    <p>Registered users can<span class="text-danger"> create</span> events for others to volunteer for.</p>
+</div>
+
 <br>
 
 <input type="text" ng-model="event.name" placeholder="Enter event name">
@@ -27,30 +31,3 @@
 
 <button type="button" class="btn btn-primary" ng-click="createEvent()">Create this Event</button>
 <!--<a ng-click="createEvent()">Create this event</a>-->
-
-
-<!--var Event = Schema({
-	Name: { type: String, required: true },
-	Description: { type: String },
-	Category: { type: String, required: true },
-	SpecialReqs: {type: String },
-	LocationDescription: { type: String },
-	Address1: { type: String },
-	Address2: { type: String },
-	City: { type: String },
-	State: { type: String },
-	Zip: { type: String },
-	createdBy: {type: Schema.Types.ObjectId, ref: 'event' },
-	// StartDate: { type: Date, required: true },
-	// StartTime: { type: Date, required: true },
-	// EndDate: { type: Date, required: true },
-	// EndTime: { type: Date, required: true },
-	VolunteersNeeded: { type: Number },
-	// Volunteers: [{ type: Schema.Types.ObjectId, ref: 'event' }],
-
-	Volunteers: [
-							{ eventId: {type: Schema.Types.ObjectId, ref: 'event' }, 
-							  Status: {type: String, enum: ["New", "Confirmed", "Contacted", "Rejected" ] }
-							}
-						  ]
-	-->

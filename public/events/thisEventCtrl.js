@@ -10,6 +10,18 @@ angular.module('volunteer')
 		})
 	}();
 		
+	$scope.udpateEventVolunteers = function() {
+		var volunteer = {
+			userId: $stateParams.id,
+			status: "New"
+		} 
+		mainService.udpateEventVolunteers($scope.eventId, volunteer).then(function(response){
+			console.log("updated volunteer response: ", response);
+			$scope.event=response;
+		})
+	};
+	
+	
 		
 		
 });

@@ -22,7 +22,7 @@ var Event = Schema({
 
 	volunteers: [
 							{ userId: {type: Schema.Types.ObjectId, ref: 'User' }, 
-							  Status: {type: String, enum: ["New", "Confirmed", "Contacted", "Rejected" ] }
+							  status: {type: String, enum: ["New", "Confirmed", "Contacted", "Rejected" ] }
 							}
 						  ]
 	

@@ -7,8 +7,11 @@ var userCtrl = require('./server/controllers/userCtrl');
 var eventCtrl = require('./server/controllers/eventCtrl');
 
 // Connetions //
-var port = 10000;
-var mongoUri = 'mongodb://localhost:27017/volunteer';
+var port = process.env.PORT || 10000;
+////For Local mongo database...
+//var mongoUri = 'mongodb://localhost:27017/volunteer';
+////For cloud based mongo database
+var mongoUri = 'mongodb://jaxtel:<admin>@ds037215.mongolab.com:37215/volunteer';
 
 
 // Controllers //

@@ -7,11 +7,13 @@ var userCtrl = require('./server/controllers/userCtrl');
 var eventCtrl = require('./server/controllers/eventCtrl');
 
 // Connetions //
-var port = process.env.PORT || 10000;
+var port = process.env.PORT || 10000; //if running on heroku, port is dynamically defined, else it's on the port specified.
+
 ////For Local mongo database...
-//var mongoUri = 'mongodb://localhost:27017/volunteer';
+var mongoUri = 'mongodb://localhost:27017/volunteer';
+
 ////For cloud based mongo database
-var mongoUri = 'mongodb://jaxtel:admin@ds037215.mongolab.com:37215/volunteer';
+// var mongoUri = 'mongodb://jaxtel:admin@ds037215.mongolab.com:37215/volunteer';
 
 
 // Controllers //

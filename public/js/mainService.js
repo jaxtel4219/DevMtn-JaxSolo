@@ -63,9 +63,6 @@ angular.module('volunteer')
 		});		
 	}
 
-
-
-
 	this.getThisEvent = function(eventId) {
 		console.log(eventId);
 		return $http.get('/api/event/'+ eventId).then(function( response ) {
@@ -87,14 +84,6 @@ angular.module('volunteer')
 	// 		return response.data;
 	// 	});		
 	// }
-
-
-	// this.getReview = function( eventId, reviewId ) {
-	// 	$http.get('/api/event/review?eventId=' + eventId + '&reviewId=' + reviewId)
-	// 		.then(function( response ) {
-	// 			return response.data;
-	// 	});
-	// } 
 
 	this.udpateEventVolunteers = function( id, volunteer ) { 
 		// console.log("mainService eventId: ", id);

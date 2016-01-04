@@ -21,12 +21,25 @@
 	</div>-->
 
 <br>
-this is for showing hiding button based on whether user id is equal to...
-<div ng-hide="userID">
-	I'm not visible
-	<br>       
-	
-	<button type="button" class="btn btn-primary" ng-click="udpateEventVolunteers()">Volunteer for this event!</button>
+
+
+<div ng-show="event.createdBy !== userId">     
+    <button type="button" class="btn btn-primary" ng-click="udpateEventVolunteers()">Volunteer for this event!</button>
+</div> 
+
+<div ng-show="event.createdBy === userId">  
+    <button type="button" class="btn btn-primary" ng-click="getThisEvent()">Update this event!</button>
+
+   <button type="button" class="btn btn-danger" ng-click="deleteThisEvent()">Delete this event!</button>
+</div>  
+
+
+createdBy : {{event.createdBy}}
+<br>
+userId : {{userId}}
+<br>
+Volunteers Info : {{event.volunteers}} 
+
 </div>
 	<!--<a ui-sref=".thisEvent">Event Detail</a>-->
 	<!--<button ng-click="updateEvent(event._id)">Edit this event</button>

@@ -3,7 +3,8 @@ angular.module('volunteer')
 	
 	console.log("jax stateparams line 4:" , $stateParams);
 	$scope.eventId = $stateParams.eventId;
-	$scope.getThisEvent = function(){
+	
+    $scope.getThisEvent = function(){
 		mainService.getThisEvent($scope.eventId).then(function(response){
 			console.log(response);
 			$scope.event=response;
@@ -21,6 +22,13 @@ angular.module('volunteer')
 		})
 	};
 	
+    $scope.deleteThisEvent = function(){
+		mainService.deleteEvent($scope.eventId).then(function(response){
+			console.log(response);
+			$scope.event=response;
+		})
+	};
+
 	
 		
 		

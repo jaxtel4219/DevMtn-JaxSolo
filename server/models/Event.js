@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var Event = Schema({
-	name: { type: String, required: true },
+	name: { type: String, required: true, unique: true },
 	description: { type: String },
 	category: { type: String, required: true },
 	specialReqs: {type: String },
@@ -21,7 +21,7 @@ var Event = Schema({
 	// Volunteers: [{ type: Schema.Types.ObjectId, ref: 'User' }],
 
 	volunteers: [
-							{ userId: {type: Schema.Types.ObjectId, ref: 'User' }, 
+							{ userId: {type: Schema.Types.ObjectId, ref: 'User'}, //unique: true does not seem to work before or after ref: 'User'
 							  status: {type: String, enum: ["New", "Confirmed", "Contacted", "Rejected" ] }
 							}
 						  ]
